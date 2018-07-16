@@ -5,7 +5,7 @@ module.exports = PluginBase => class RenamerIndexDir extends PluginBase {
   }
 
   description () {
-    return 'Replaces the `{{index}}` token, resetting the counter for each folder visited.'
+    return 'Replaces the `\\{\\{index\\}\\}` token, resetting the counter for each folder visited.'
   }
 
   optionDefinitions () {
