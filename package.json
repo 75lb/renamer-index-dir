@@ -1,16 +1,20 @@
 {
   "name": "renamer-index-dir",
   "author": "Lloyd Brookes <75pound@gmail.com>",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Replaces the {{index}} token, resetting the counter for each folder visited.",
   "repository": "https://github.com/75lb/renamer-index-dir",
-  "keywords": [ "renamer-plugin", "renamer", "file", "rename" ],
+  "keywords": [
+    "renamer-plugin",
+    "renamer",
+    "file",
+    "rename"
+  ],
   "license": "MIT",
   "engines": {
     "node": ">=6"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
     "printj": "^1.1.2"
   }
