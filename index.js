@@ -18,9 +18,9 @@ module.exports = PluginBase => class RenamerIndexDir extends PluginBase {
   replace (filePath, options) {
     if (/{{index}}/.test(filePath)) {
       const path = require('path')
-      const file = this.parse(filePath)
-      const newBasename = this.replaceIndexToken(file.basename, this.getMatchCount(file.dirname), options.indexFormat || '%d')
-      return path.join(file.dirname, newBasename)
+      const file = path.parse(filePath)
+      const newBasename = this.replaceIndexToken(file.base, this.getMatchCount(file.dir), options.indexFormat || '%d')
+      return path.join(file.dir, newBasename)
     } else {
       return filePath
     }

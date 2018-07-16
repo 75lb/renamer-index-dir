@@ -1,1 +1,3 @@
 script/sandbox
+coverage
+.nyc_output
