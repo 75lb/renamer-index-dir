@@ -4,6 +4,10 @@ module.exports = PluginBase => class RenamerIndexDir extends PluginBase {
     this.matchCount = {}
   }
 
+  description () {
+    return 'Replaces the `{{index}}` token, resetting the counter for each folder visited.'
+  }
+
   optionDefinitions () {
     return [
       { name: 'index-format', description: 'The format of the number to replace `\\{\\{index\\}\\}` with. Specify a standard printf format string, for example `%03d` would yield 001, 002, 003 etc. Defaults to `%d`.' }
