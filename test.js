@@ -29,17 +29,20 @@ runner.test('optionDefinitions', function () {
 runner.test('simple', function () {
   createFixture(`${testRoot}/${this.index}/one/one`)
   createFixture(`${testRoot}/${this.index}/two/one`)
+  createFixture(`${testRoot}/${this.index}/one/two`)
   const renamer = new Renamer()
   renamer.rename({
-    files: [ `${testRoot}/${this.index}/one/one`, `${testRoot}/${this.index}/two/one`],
+    files: [ `${testRoot}/${this.index}/one/one`, `${testRoot}/${this.index}/two/one`, `${testRoot}/${this.index}/one/two` ],
     plugin: [ 'default', renamerIndexDir ],
     find: /$/,
     replace: '{{index}}'
   })
   a.strictEqual(fs.existsSync(`${testRoot}/${this.index}/one/one`), false)
   a.strictEqual(fs.existsSync(`${testRoot}/${this.index}/two/one`), false)
+  a.strictEqual(fs.existsSync(`${testRoot}/${this.index}/one/two`), false)
   a.strictEqual(fs.existsSync(`${testRoot}/${this.index}/one/one1`), true)
   a.strictEqual(fs.existsSync(`${testRoot}/${this.index}/two/one1`), true)
+  a.strictEqual(fs.existsSync(`${testRoot}/${this.index}/one/two2`), true)
 })
 
 runner.test('simple, no index', function () {
@@ -56,4 +59,11 @@ runner.test('simple, no index', function () {
   a.strictEqual(fs.existsSync(`${testRoot}/${this.index}/two/one`), false)
   a.strictEqual(fs.existsSync(`${testRoot}/${this.index}/one/one_`), true)
   a.strictEqual(fs.existsSync(`${testRoot}/${this.index}/two/one_`), true)
+})
+
+runner.test('description', function () {
+  const Plugin = renamerIndexDir(class {})
+  const plugin = new Plugin()
+  const result = plugin.description()
+  a.ok(result)
 })

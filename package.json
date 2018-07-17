@@ -15,7 +15,7 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "scripts": {
     "test": "test-runner test.js",
@@ -25,6 +25,7 @@
     "printj": "^1.1.2"
   },
   "devDependencies": {
+    "coveralls": "^3.0.2",
     "mkdirp2": "^1.0.4",
     "renamer": "^1.0.0-5",
     "rimraf": "^2.6.2",
