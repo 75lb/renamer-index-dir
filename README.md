@@ -1,7 +1,8 @@
-[![view on npm](https://img.shields.io/npm/v/renamer-index-dir.svg)](https://www.npmjs.org/package/renamer-index-dir)
-[![npm module downloads](https://img.shields.io/npm/dt/renamer-index-dir.svg)](https://www.npmjs.org/package/renamer-index-dir)
+[![view on npm](https://badgen.net/npm/v/renamer-index-dir)](https://www.npmjs.org/package/renamer-index-dir)
+[![npm module downloads](https://badgen.net/npm/dt/renamer-index-dir)](https://www.npmjs.org/package/renamer-index-dir)
+[![Gihub repo dependents](https://badgen.net/github/dependents-repo/75lb/renamer-index-dir)](https://github.com/75lb/renamer-index-dir/network/dependents?dependent_type=REPOSITORY)
+[![Gihub package dependents](https://badgen.net/github/dependents-pkg/75lb/renamer-index-dir)](https://github.com/75lb/renamer-index-dir/network/dependents?dependent_type=PACKAGE)
 [![Build Status](https://travis-ci.org/75lb/renamer-index-dir.svg?branch=master)](https://travis-ci.org/75lb/renamer-index-dir)
-[![Dependency Status](https://david-dm.org/75lb/renamer-index-dir.svg)](https://david-dm.org/75lb/renamer-index-dir)
 [![Coverage Status](https://coveralls.io/repos/github/75lb/renamer-index-dir/badge.svg)](https://coveralls.io/github/75lb/renamer-index-dir)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
 
@@ -27,7 +28,8 @@ $ tree
 
 2 directories, 6 files
 
-$ renamer -p default -p renamer-index-dir --find '/$/' --replace '{{index}}' */*
+$ renamer --chain find-replace --chain renamer-index-dir --find '/$/' --replace '{{index}}' */*
+
 ✔︎ folder1/one → folder1/one1
 ✔︎ folder1/two → folder1/two2
 ✔︎ folder2/one → folder2/one1
@@ -50,4 +52,4 @@ $ tree
 
 * * *
 
-&copy; 2018 Lloyd Brookes <75pound@gmail.com>.
+&copy; 2018-21 Lloyd Brookes <75pound@gmail.com>.

@@ -1,6 +1,8 @@
-module.exports = PluginBase => class RenamerIndexDir extends PluginBase {
+import path from 'path'
+import printj from 'printj'
+
+class RenamerIndexDir {
   constructor () {
-    super()
     this.matchCount = {}
   }
 
@@ -21,7 +23,6 @@ module.exports = PluginBase => class RenamerIndexDir extends PluginBase {
 
   replace (filePath, options) {
     if (/{{index}}/.test(filePath)) {
-      const path = require('path')
       const file = path.parse(filePath)
       const newBasename = this.replaceIndexToken(file.base, this.getMatchCount(file.dir), options.indexFormat || '%d')
       return path.join(file.dir, newBasename)
@@ -31,7 +32,8 @@ module.exports = PluginBase => class RenamerIndexDir extends PluginBase {
   }
 
   replaceIndexToken (basename, index, format) {
-    const sprintf = require('printj').sprintf
-    return basename.replace(/{{index}}/g, sprintf(format, index))
+    return basename.replace(/{{index}}/g, printj.sprintf(format, index))
   }
 }
+
+export default RenamerIndexDir
