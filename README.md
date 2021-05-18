@@ -8,9 +8,11 @@
 
 # renamer-index-dir
 
-Replaces the `{{index}}` token like the built-in renamer behaviour but resets the counter for each folder visited.
+This is a [renamer](https://github.com/75lb/renamer) replace chain plugin - see [this tutorial](https://github.com/75lb/renamer/wiki/How-to-use-replace-chain-plugins) to learn how to use renamer plugins.
 
-_In the example below, Windows users should use double instead of single quotes._
+Replaces the `{{index}}` token (like the [built-in renamer behaviour](https://github.com/75lb/renamer/wiki/Examples#index-token-examples)) but resets the counter for each folder visited.
+
+_In the example below, Windows users should use double instead of single quotes._ Remove the `--dry-run` flag to rename the files on disk.
 
 ```
 $ npm install -g renamer renamer-index-dir
@@ -28,7 +30,7 @@ $ tree
 
 2 directories, 6 files
 
-$ renamer --chain find-replace --chain renamer-index-dir --find '/$/' --replace '{{index}}' */*
+$ renamer --chain find-replace --chain renamer-index-dir --find '/$/' --replace '{{index}}' --dry-run */*
 
 ✔︎ folder1/one → folder1/one1
 ✔︎ folder1/two → folder1/two2
